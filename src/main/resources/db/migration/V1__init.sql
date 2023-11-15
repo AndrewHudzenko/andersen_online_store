@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS clients (
                                        surname VARCHAR(255),
                                        phone_number VARCHAR(255),
                                        email VARCHAR(255),
+                                       discount BOOLEAN,
                                        visible BOOLEAN
 );
 

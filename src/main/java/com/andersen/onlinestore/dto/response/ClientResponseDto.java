@@ -1,4 +1,7 @@
 package com.andersen.onlinestore.dto.response;
 
-public record ClientResponseDto(String name, String surname, String email) {
+import lombok.Builder;
+
+@Builder
+public record ClientResponseDto(String name, String surname, String phoneNumber, String email, Boolean discount) {
 }

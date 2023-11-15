@@ -1,6 +1,7 @@
 package com.andersen.onlinestore.controller;
 
 import com.andersen.onlinestore.dto.request.ProductRequestDto;
+import com.andersen.onlinestore.dto.request.SingleProductRequestDto;
 import com.andersen.onlinestore.dto.response.ProductResponseDto;
 import com.andersen.onlinestore.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -38,7 +39,7 @@ public class ProductController {
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Create product")
-    public ProductResponseDto create(@Valid @RequestBody ProductRequestDto productRequestDto) {
+    public ProductResponseDto create(@Valid @RequestBody SingleProductRequestDto productRequestDto) {
         log.info("POST /api/v1/products");
         return productService.create(productRequestDto);
     }

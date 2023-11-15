@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-
 @Entity
 @Getter
 @Setter
@@ -26,3 +25,4 @@ public class Product {
     private Long amount;
     private Boolean visible;
 }
+

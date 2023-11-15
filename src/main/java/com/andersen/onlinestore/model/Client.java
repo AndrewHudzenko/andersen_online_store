@@ -26,5 +26,6 @@ public class Client {
             joinColumns = @JoinColumn(name = "client_id"),
             inverseJoinColumns = @JoinColumn(name = "order_id"))
     private List<Order> orders;
+    private Boolean discount;
     private Boolean visible;
 }

@@ -1,13 +1,10 @@
-package com.andersen.onlinestore.dto.response;
+package com.andersen.onlinestore.dto.request;
 
 import com.andersen.onlinestore.model.type.ProductCategory;
-import lombok.Builder;
 
 import java.math.BigDecimal;
 
-@Builder
-public record ProductResponseDto(
+public record SingleProductRequestDto(
         String title,
         ProductCategory category,
-        BigDecimal retailPrice,
         BigDecimal purchasePrice) {}

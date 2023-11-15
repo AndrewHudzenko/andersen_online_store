@@ -1,7 +1,7 @@
-INSERT INTO clients (id, name, surname, phone_number, email, visible)
+INSERT INTO clients (id, name, surname, phone_number, email, discount, visible)
 VALUES
-    ('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'John', 'Doe', '123456789', 'john@example.com', true),
-    ('6ba7b811-9dad-11d1-80b4-00c04fd430c8', 'Jane', 'Smith', '987654321', 'jane@example.com', true)
+    ('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'John', 'Doe', '123456789', 'john@example.com', true, true),
+    ('6ba7b811-9dad-11d1-80b4-00c04fd430c8', 'Jane', 'Smith', '987654321', 'jane@example.com', true, true)
 on conflict (id) do nothing;
 
 INSERT INTO orders (id, client_id, creating_time, visible)

@@ -19,6 +19,8 @@ public class Product {
     private String title;
     @Enumerated(EnumType.STRING)
     private ProductCategory category;
-    private BigDecimal price;
+    private BigDecimal purchase_price;
+    private BigDecimal retail_price;
     private Long amount;
+    private Boolean visible;
 }

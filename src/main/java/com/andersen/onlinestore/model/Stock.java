@@ -3,7 +3,6 @@ package com.andersen.onlinestore.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -12,19 +11,14 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "orders")
-public class Order {
+@Table(name = "stock")
+public class Stock {
     @Id
     private String id;
-    @ManyToOne
-    @JoinColumn(name = "client_id")
-    private Client client;
-    @ManyToMany
+    @OneToMany
     @JoinTable(
-            name = "orders_products",
-            joinColumns = @JoinColumn(name = "order_id"),
+            name = "stock_products",
+            joinColumns = @JoinColumn(name = "stock_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Product> products;
-    private LocalDateTime creating_time;
-    private Boolean visible;
 }

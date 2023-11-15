@@ -17,6 +17,7 @@ public class Client {
     private String id;
     private String name;
     private String surname;
+    private String phone_number;
     private String email;
     @OneToMany
     @JoinTable(
@@ -24,4 +25,5 @@ public class Client {
             joinColumns = @JoinColumn(name = "client_id"),
             inverseJoinColumns = @JoinColumn(name = "order_id"))
     private List<Order> orders;
+    private Boolean visible;
 }

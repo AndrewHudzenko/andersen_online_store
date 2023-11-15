@@ -9,5 +9,6 @@ public interface ProductService {
     ProductResponseDto getById(String id);
     List<ProductResponseDto> getAll();
     ProductResponseDto create(ProductRequestDto productRequestDto);
+    List<ProductResponseDto> createSeveral(List<ProductRequestDto> productRequestDtos);
     void deleteById(String id);
 }

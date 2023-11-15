@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -19,13 +20,18 @@ public class ProductServiceImpl implements ProductService {
     private final ProductMapper productMapper;
     @Override
     public ProductResponseDto getById(String id) {
-        return productMapper.toDto(productRepository.findById(id)
-                .orElseThrow(() -> new ProductNotFoundException(id)));
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException(id));
+        if (product.getVisible()) {
+            return productMapper.toDto(product);
+        }
+        throw new ProductNotFoundException(id);
     }
 
     @Override
     public List<ProductResponseDto> getAll() {
         return productRepository.findAll().stream()
+                .filter(Product::getVisible)
                 .map(productMapper::toDto)
                 .toList();
     }
@@ -34,6 +40,13 @@ public class ProductServiceImpl implements ProductService {
     public ProductResponseDto create(ProductRequestDto productRequestDto) {
         return productMapper.toDto(productRepository
                 .save(productMapper.toModel(productRequestDto)));
+    }
+
+    @Override
+    public List<ProductResponseDto> createSeveral(List<ProductRequestDto> productRequestDtos) {
+        List<Product> products = productRequestDtos.stream().map(productMapper::toModel).toList();
+        productRepository.saveAll(products);
+        return products.stream().map(productMapper::toDto).toList();
     }
 
     @Override

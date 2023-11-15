@@ -35,12 +35,20 @@ public class ProductController {
         return productService.getAll();
     }
 
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Create product")
     public ProductResponseDto create(@Valid @RequestBody ProductRequestDto productRequestDto) {
         log.info("POST /api/v1/products");
         return productService.create(productRequestDto);
+    }
+
+    @PostMapping("/create/several")
+    @ResponseStatus(HttpStatus.CREATED)
+    @Operation(summary = "Create several products")
+    public List<ProductResponseDto> createSeveral(@Valid @RequestBody List<ProductRequestDto> productRequestDtos) {
+        log.info("POST /api/v1/products/several");
+        return productService.createSeveral(productRequestDtos);
     }
 
     @PutMapping("/{id}")

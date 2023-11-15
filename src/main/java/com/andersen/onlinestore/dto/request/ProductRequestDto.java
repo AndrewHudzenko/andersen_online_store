@@ -7,4 +7,5 @@ import java.math.BigDecimal;
 public record ProductRequestDto(
         String title,
         ProductCategory category,
-        BigDecimal price) {}
+        BigDecimal price,
+        Long amount) {}

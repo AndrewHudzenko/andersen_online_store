@@ -17,7 +17,8 @@ public class Client {
     private String id;
     private String name;
     private String surname;
-    private String phone_number;
+    @Column(name = "phone_number")
+    private String phoneNumber;
     private String email;
     @OneToMany
     @JoinTable(

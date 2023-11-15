@@ -25,6 +25,7 @@ public class Order {
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Product> products;
-    private LocalDateTime creating_time;
+    @Column(name = "creating_time")
+    private LocalDateTime creatingTime;
     private Boolean visible;
 }

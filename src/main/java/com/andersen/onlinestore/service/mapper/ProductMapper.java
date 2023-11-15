@@ -13,7 +13,7 @@ public class ProductMapper {
         return ProductResponseDto.builder()
                 .title(product.getTitle())
                 .category(product.getCategory())
-                .price(product.getPurchase_price())
+                .price(product.getPurchasePrice())
                 .build();
     }
 
@@ -22,10 +22,10 @@ public class ProductMapper {
                 .id(UUID.randomUUID().toString())
                 .title(productRequestDto.title())
                 .category(productRequestDto.category())
-                .purchase_price(productRequestDto.price())
+                .purchasePrice(productRequestDto.price())
 //                .retailPrice(productRequestDto.)
                 /**
-                 * SET AMOUNT SOMEHOW
+                 * SET AMOUNT
                  */
                 .visible(true)
                 .build();

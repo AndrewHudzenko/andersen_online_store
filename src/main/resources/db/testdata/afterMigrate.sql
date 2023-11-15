@@ -12,8 +12,8 @@ on conflict (id) do nothing;
 
 INSERT INTO products (id, title, category, purchase_price, retail_price, amount, visible)
 VALUES
-    ('6ba7b812-9dad-11d1-80b4-00c04fd430c8', 'Laptop', 'Electronics', 800.00, 1200.00, 10, true),
-    ('6ba7b813-9dad-11d1-80b4-00c04fd430c8', 'Coffee Maker', 'Appliances', 50.00, 80.00, 20, true)
+    ('6ba7b812-9dad-11d1-80b4-00c04fd430c8', 'Iphone 12', 'MOBILE_PHONE', 800.00, 1200.00, 10, true),
+    ('6ba7b813-9dad-11d1-80b4-00c04fd430c8', 'Coffee Machine', 'HOME_APPLIANCE', 50.00, 80.00, 20, true)
 on conflict (id) do nothing;
 
 INSERT INTO stock (id, visible)

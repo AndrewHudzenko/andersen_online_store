@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-
 @Entity
 @Getter
 @Setter
@@ -19,6 +18,11 @@ public class Product {
     private String title;
     @Enumerated(EnumType.STRING)
     private ProductCategory category;
-    private BigDecimal price;
+    @Column(name = "purchase_price")
+    private BigDecimal purchasePrice;
+    @Column(name = "retail_price")
+    private BigDecimal retailPrice;
     private Long amount;
+    private Boolean visible;
 }
+

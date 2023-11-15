@@ -1,7 +1,6 @@
 package com.andersen.onlinestore.service.scheduler;
 
 import com.andersen.onlinestore.dto.response.ClientResponseDto;
-import com.andersen.onlinestore.model.Client;
 import com.andersen.onlinestore.service.ClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
